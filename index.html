@@ -30,9 +30,14 @@
       <a class="phone" href="tel:+989128501931">📞 09128501931</a>
     </div>
     <canvas id="bgCanvas"></canvas>
+    <button id="interactButton">فعال کنید!</button>
   </div>
 
   <script>
+    // Add interaction for button
+    document.getElementById('interactButton').addEventListener('click', () => {
+      alert('Rajimo در راه است!');
+    });
     const canvas = document.getElementById("bgCanvas");
     const ctx = canvas.getContext("2d");
     let particlesArray = [];
