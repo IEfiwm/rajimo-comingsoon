@@ -4,10 +4,12 @@
   box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
 body, html {
   width: 100%;
   height: 100%;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Vazirmatn', sans-serif;
   background-color: #0a0a23;
   overflow: hidden;
 }
@@ -21,6 +23,7 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
 }
 
 #bgCanvas {
@@ -32,25 +35,40 @@ body, html {
 
 .content {
   z-index: 1;
+  background: rgba(0, 0, 0, 0.5);  /* Add subtle background for readability */
   padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;  /* Reduced for better mobile scaling */
   background: linear-gradient(90deg, #00d9ff, #4567ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
+  @media (min-width: 768px) {
+    font-size: 4rem;
+  }
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #cfd8dc;
   margin: 0.5rem 0;
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+  }
 }
 
 .phone {
   margin-top: 2rem;
-  font-size: 1rem;
-  color: #90caf9;
+  font-size: 0.9rem;
+  color: #4a90e2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.phone:hover {
+  color: #00d9ff;
 }
