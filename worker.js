@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+// Cloudflare Worker for Rajimo Coming Soon Page
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
+
+async function handleRequest(request) {
+  // Get the HTML content
+  const html = `<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -875,4 +882,16 @@
         optimizePerformance();
     </script>
 </body>
-</html>
+</html>`;
+
+  // Return the HTML with proper headers
+  return new Response(html, {
+    headers: {
+      'Content-Type': 'text/html; charset=utf-8',
+      'Cache-Control': 'public, max-age=3600',
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'DENY',
+      'X-XSS-Protection': '1; mode=block',
+    },
+  })
+}
