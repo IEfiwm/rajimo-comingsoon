@@ -27,7 +27,8 @@ class Typewriter {
             this.currentText = this.text.substring(0, this.currentIndex + 1);
         }
 
-        this.element.innerHTML = this.currentText + '<span class="cursor">|</span>';
+        // For RTL text, add cursor at the beginning
+        this.element.innerHTML = '<span class="cursor">|</span>' + this.currentText;
 
         let typeSpeed = this.speed;
         if (this.isDeleting) {
@@ -184,13 +185,13 @@ function trackMouse(e) {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize typewriter
-    const typewriter = new Typewriter(
-        typewriterElement, 
-        'Something amazing is on the way...', 
-        80
-    );
-    typewriter.start();
+        // Initialize typewriter
+        const typewriter = new Typewriter(
+            typewriterElement, 
+            'چیز شگفت‌انگیزی در راه است...', 
+            80
+        );
+        typewriter.start();
 
     // Initialize particle system
     const particleSystem = new ParticleSystem(particlesContainer);

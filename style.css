@@ -136,20 +136,24 @@ body {
     }
 }
 
-/* Typewriter Subtext */
-.subtext {
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    color: #b8c5d1;
-    margin-bottom: 50px;
-    min-height: 2rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-}
+        /* Typewriter Subtext */
+        .subtext {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            color: #b8c5d1;
+            margin-bottom: 50px;
+            min-height: 2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-align: right;
+            direction: rtl;
+            unicode-bidi: bidi-override;
+        }
 
 .cursor {
     animation: blink 1s infinite;
     color: #8a2be2;
     font-weight: bold;
+    margin-left: 2px;
 }
 
 @keyframes blink {
