@@ -270,3 +270,6 @@ window.addEventListener('resize', optimizePerformance);
 
 // Initialize optimization
 optimizePerformance();
+
+// my changes phrase
+ int x = 10;
